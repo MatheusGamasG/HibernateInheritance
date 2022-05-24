@@ -8,7 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "RETURN_TICKET")
+@Table(name = "RETURN_TICKETs")
 @AssociationOverride(name = "passenger", joinColumns = @JoinColumn(name = "pass_id"))
 public class ReturnTicket extends Ticket{
 

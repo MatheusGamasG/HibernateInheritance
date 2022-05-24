@@ -30,8 +30,6 @@ public class Execute {
 		em.persist(oneWayTicket);
 		em.persist(returnTicket);
 		
-		
-		
 		em.getTransaction().commit();		
 		em.close();
 	}
