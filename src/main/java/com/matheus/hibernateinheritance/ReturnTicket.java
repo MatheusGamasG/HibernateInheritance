@@ -2,9 +2,14 @@ package com.matheus.hibernateinheritance;
 
 import java.time.LocalDate;
 
+import javax.persistence.AssociationOverride;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "RETURN_TICKET")
+@AssociationOverride(name = "passenger", joinColumns = @JoinColumn(name = "pass_id"))
 public class ReturnTicket extends Ticket{
 
 	private LocalDate latestReturnDate;

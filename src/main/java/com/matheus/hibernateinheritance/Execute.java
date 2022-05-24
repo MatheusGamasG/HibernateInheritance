@@ -14,15 +14,22 @@ public class Execute {
 		
 		em.getTransaction().begin();
 		
+		Passenger matheus = new Passenger("Matheus Guimarães");
+		
 		OneWayTicket oneWayTicket = new OneWayTicket();
 		oneWayTicket.setNumber("AABBCC");
 		oneWayTicket.setLatestDepartureDate(LocalDate.of(2021, 5, 24));
+		oneWayTicket.setPassenger(matheus);
+		
 		ReturnTicket returnTicket = new ReturnTicket();
 		returnTicket.setNumber("DDEEFF");
 		returnTicket.setLatestReturnDate(LocalDate.of(2020, 4, 13));
+		returnTicket.setPassenger(matheus);
 		
+		em.persist(matheus);
 		em.persist(oneWayTicket);
 		em.persist(returnTicket);
+		
 		
 		
 		em.getTransaction().commit();		
